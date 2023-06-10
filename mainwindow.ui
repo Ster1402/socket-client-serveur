@@ -1,0 +1,879 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>841</width>
+    <height>622</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Client-Serveur</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: #003C5F</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout_3">
+    <item>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <widget class="QLabel" name="title">
+        <property name="font">
+         <font>
+          <family>Montserrat SemiBold</family>
+          <pointsize>16</pointsize>
+          <weight>75</weight>
+          <bold>true</bold>
+          <stylestrategy>PreferDefault</stylestrategy>
+          <kerning>false</kerning>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel{
+	background: rgba(0, 42, 68, 183);
+	color: #dedede;
+	border: 2px solid #dedede;
+	border-radius: 15px;
+}
+</string>
+        </property>
+        <property name="text">
+         <string>Administration Système - GLO IV</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="verticalSpacer">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeType">
+         <enum>QSizePolicy::Fixed</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QTabWidget" name="pages">
+        <property name="font">
+         <font>
+          <family>Montserrat Medium</family>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QTabWidget{
+	background: #003c5f;
+}
+
+QTabWidget::pane {
+  border: 1px solid #DEDEDE;
+  top:-1px; 
+} 
+
+QTabBar::tab {
+	width: 100%;
+  	color: #fff; 
+  	border: 1px solid #DEDEDE;
+  	padding: 5px 50px;
+} 
+
+QTabBar::tab:selected, QTabBar::tab:hover { 
+  	background: #F38533; 
+	margin-bottom: -1px; 
+}</string>
+        </property>
+        <property name="currentIndex">
+         <number>0</number>
+        </property>
+        <widget class="QWidget" name="pagePresentation">
+         <property name="font">
+          <font>
+           <family>Montserrat Medium</family>
+           <pointsize>12</pointsize>
+          </font>
+         </property>
+         <attribute name="title">
+          <string>Info</string>
+         </attribute>
+         <layout class="QVBoxLayout" name="verticalLayout_5">
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayout_4">
+            <item>
+             <widget class="QTableWidget" name="table_camera">
+              <property name="enabled">
+               <bool>false</bool>
+              </property>
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="cursor" stdset="0">
+               <cursorShape>PointingHandCursor</cursorShape>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">*{
+	background: #003C5F;
+	font-size: 16px;
+	color: #dedede;
+}
+
+QTableWidget {
+	background: #002A44;
+	border-radius: 5px;
+}
+
+ QScrollBar:vertical {
+	border: none;
+    background: rgb(52, 59, 72);
+    width: 14px;
+    margin: 21px 0 21px 0;
+	border-radius: 0px;
+ }
+
+ QScrollBar::handle:vertical {	
+	background: rgb(85, 170, 255);
+    min-height: 25px;
+	border-radius: 7px
+ }
+ QScrollBar::add-line:vertical {
+     border: none;
+    background: rgb(55, 63, 77);
+     height: 20px;
+	border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+     subcontrol-position: bottom;
+     subcontrol-origin: margin;
+ }
+ QScrollBar::sub-line:vertical {
+	border: none;
+    background: rgb(55, 63, 77);
+     height: 20px;
+	border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+     subcontrol-position: top;
+     subcontrol-origin: margin;
+ }
+
+ QScrollBar::up-arrow:vertical, QScrollBar::down-arrow:vertical {
+     background: none;
+ }
+
+ QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
+     background: none;
+ }
+
+
+QHeaderView::section:horizontal {
+	background-color: #F38533;
+	padding: 5px;
+	font-size: 16px;
+	font-weight: bold;
+	color: #002A44;
+	border-radius: 0;
+	border-left: 1px solid #003C5F;
+}
+
+QTableView::item {
+	background: #002A44;
+	border-left: 1px solid #003c5f;
+	color: #dedede;
+	padding-left: 10px;
+}
+
+QTableView::item:hover, QTableView::item:selected, QTableView::item:focus {
+	background: #003c5f;
+	color: #dedede;
+}
+</string>
+              </property>
+              <property name="frameShape">
+               <enum>QFrame::NoFrame</enum>
+              </property>
+              <property name="verticalScrollBarPolicy">
+               <enum>Qt::ScrollBarAsNeeded</enum>
+              </property>
+              <property name="editTriggers">
+               <set>QAbstractItemView::DoubleClicked</set>
+              </property>
+              <property name="alternatingRowColors">
+               <bool>false</bool>
+              </property>
+              <property name="selectionMode">
+               <enum>QAbstractItemView::SingleSelection</enum>
+              </property>
+              <property name="selectionBehavior">
+               <enum>QAbstractItemView::SelectRows</enum>
+              </property>
+              <property name="textElideMode">
+               <enum>Qt::ElideLeft</enum>
+              </property>
+              <property name="gridStyle">
+               <enum>Qt::NoPen</enum>
+              </property>
+              <property name="sortingEnabled">
+               <bool>true</bool>
+              </property>
+              <property name="wordWrap">
+               <bool>true</bool>
+              </property>
+              <property name="cornerButtonEnabled">
+               <bool>false</bool>
+              </property>
+              <attribute name="horizontalHeaderCascadingSectionResizes">
+               <bool>true</bool>
+              </attribute>
+              <attribute name="horizontalHeaderDefaultSectionSize">
+               <number>350</number>
+              </attribute>
+              <attribute name="horizontalHeaderStretchLastSection">
+               <bool>true</bool>
+              </attribute>
+              <attribute name="verticalHeaderVisible">
+               <bool>false</bool>
+              </attribute>
+              <attribute name="verticalHeaderStretchLastSection">
+               <bool>false</bool>
+              </attribute>
+              <row>
+               <property name="text">
+                <string>DIDDI</string>
+               </property>
+              </row>
+              <row>
+               <property name="text">
+                <string>KAMSU</string>
+               </property>
+              </row>
+              <row>
+               <property name="text">
+                <string>NDE</string>
+               </property>
+              </row>
+              <row>
+               <property name="text">
+                <string>SOPPE</string>
+               </property>
+              </row>
+              <row>
+               <property name="text">
+                <string>TEUHEU</string>
+               </property>
+              </row>
+              <row>
+               <property name="text">
+                <string>TSAGUE</string>
+               </property>
+              </row>
+              <column>
+               <property name="text">
+                <string>Nom et prénom</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>Matricule</string>
+               </property>
+              </column>
+              <item row="0" column="0">
+               <property name="text">
+                <string>DIDDI SAADATOU Bello</string>
+               </property>
+              </item>
+              <item row="0" column="1">
+               <property name="text">
+                <string>21G00776</string>
+               </property>
+              </item>
+              <item row="1" column="0">
+               <property name="text">
+                <string>KAMSU-KOM Jordan</string>
+               </property>
+              </item>
+              <item row="1" column="1">
+               <property name="text">
+                <string>21G00793</string>
+               </property>
+              </item>
+              <item row="2" column="0">
+               <property name="text">
+                <string>NDE TSAPI Steve-Roland</string>
+               </property>
+              </item>
+              <item row="2" column="1">
+               <property name="text">
+                <string>21G00804</string>
+               </property>
+              </item>
+              <item row="3" column="0">
+               <property name="text">
+                <string>SOPPE FRANCK Dolby</string>
+               </property>
+              </item>
+              <item row="3" column="1">
+               <property name="text">
+                <string>21G00782</string>
+               </property>
+              </item>
+              <item row="4" column="0">
+               <property name="text">
+                <string>TEUHEU MANUELA WEDA</string>
+               </property>
+              </item>
+              <item row="4" column="1">
+               <property name="text">
+                <string>21G00809</string>
+               </property>
+              </item>
+              <item row="5" column="0">
+               <property name="text">
+                <string>TSAGUE TEZONG Jane</string>
+               </property>
+              </item>
+              <item row="5" column="1">
+               <property name="text">
+                <string>21G00795</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="pageServeur">
+         <property name="font">
+          <font>
+           <family>Montserrat Medium</family>
+           <pointsize>12</pointsize>
+          </font>
+         </property>
+         <attribute name="title">
+          <string>Serveur</string>
+         </attribute>
+         <layout class="QVBoxLayout" name="verticalLayout_2">
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayout_6">
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_2">
+              <property name="topMargin">
+               <number>10</number>
+              </property>
+              <property name="bottomMargin">
+               <number>10</number>
+              </property>
+              <item>
+               <widget class="QLabel" name="label_2">
+                <property name="font">
+                 <font>
+                  <family>Montserrat Medium</family>
+                  <pointsize>12</pointsize>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">QLabel {
+	color: #dedede;
+	padding: 5px;
+}</string>
+                </property>
+                <property name="text">
+                 <string>Adresse IP : </string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="adresseIPServeur">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="font">
+                 <font>
+                  <family>Montserrat ExtraBold</family>
+                  <pointsize>12</pointsize>
+                  <weight>75</weight>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">QLabel {
+	padding: 0 15px 0 27px;
+	border: 2px solid #dedede;
+	color: #dedede;
+	background: transparent;
+	border-radius: 15px;
+}
+</string>
+                </property>
+                <property name="text">
+                 <string>0.0.0.0</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_4">
+              <property name="topMargin">
+               <number>10</number>
+              </property>
+              <property name="bottomMargin">
+               <number>10</number>
+              </property>
+              <item>
+               <widget class="QLabel" name="label_6">
+                <property name="font">
+                 <font>
+                  <family>Montserrat Medium</family>
+                  <pointsize>12</pointsize>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">QLabel {
+	color: #dedede;
+	padding: 5px;
+}</string>
+                </property>
+                <property name="text">
+                 <string>Port :</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QSpinBox" name="portServeur">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="toolTip">
+                 <string extracomment="Entrer un numéro de port sur lequel communiquer."/>
+                </property>
+                <property name="toolTipDuration">
+                 <number>10</number>
+                </property>
+                <property name="statusTip">
+                 <string/>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">QSpinBox {
+	padding: 0 15px 0 27px;
+	border: 2px solid #dedede;
+	color: #dedede;
+	background: transparent;
+	border-radius: 15px;
+}
+
+QSpinBox:hover, QSpinBox:focus {
+	border-color: #F38533;
+}</string>
+                </property>
+                <property name="minimum">
+                 <number>1000</number>
+                </property>
+                <property name="maximum">
+                 <number>9999</number>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item alignment="Qt::AlignHCenter">
+             <widget class="QPushButton" name="lancerServeur">
+              <property name="enabled">
+               <bool>true</bool>
+              </property>
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="font">
+               <font>
+                <family>Montserrat SemiBold</family>
+                <pointsize>11</pointsize>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QPushButton {
+	color: #dedede;
+	background: #002A44;
+	border: 2px solid #dedede;
+	border-radius: 15px;
+	padding: 2px 15px;
+}
+
+QPushButton:disabled {
+	background: rgb(0, 82, 129);
+}
+
+QPushButton:hover {
+	background: #003c5f;
+	border-color: #F38533;
+}
+
+QPushButton:pressed {
+	background: #F38533;
+}</string>
+              </property>
+              <property name="text">
+               <string>Lancer</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="verticalSpacer_2">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeType">
+               <enum>QSizePolicy::Fixed</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QTextEdit" name="messagesServeur">
+              <property name="enabled">
+               <bool>true</bool>
+              </property>
+              <property name="font">
+               <font>
+                <family>Montserrat Medium</family>
+                <pointsize>10</pointsize>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">color: white; background: #002A44</string>
+              </property>
+              <property name="readOnly">
+               <bool>true</bool>
+              </property>
+              <property name="html">
+               <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Montserrat Medium'; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-weight:600;&quot;&gt;- Nom du Serveur :&lt;/span&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:7.8pt;&quot;&gt; Groupe Warriors&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="pageClient">
+         <attribute name="title">
+          <string>Client</string>
+         </attribute>
+         <layout class="QHBoxLayout" name="horizontalLayout">
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayout_7">
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_8">
+              <property name="topMargin">
+               <number>10</number>
+              </property>
+              <property name="bottomMargin">
+               <number>10</number>
+              </property>
+              <item>
+               <widget class="QLabel" name="label_10">
+                <property name="font">
+                 <font>
+                  <family>Montserrat Medium</family>
+                  <pointsize>12</pointsize>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">QLabel {
+	color: #dedede;
+	padding: 5px;
+}</string>
+                </property>
+                <property name="text">
+                 <string>Adresse IP : </string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="adresseIPClient">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">QLineEdit {
+	padding: 0 15px 0 27px;
+	border: 2px solid #dedede;
+	color: #dedede;
+	background: transparent;
+	border-radius: 15px;
+}
+</string>
+                </property>
+                <property name="text">
+                 <string>127.0.0.1</string>
+                </property>
+                <property name="placeholderText">
+                 <string>Entrer l'adresse IP du Serveur : 0.0.0.0</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_9">
+              <property name="topMargin">
+               <number>10</number>
+              </property>
+              <property name="bottomMargin">
+               <number>10</number>
+              </property>
+              <item>
+               <widget class="QLabel" name="label_11">
+                <property name="font">
+                 <font>
+                  <family>Montserrat Medium</family>
+                  <pointsize>12</pointsize>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">QLabel {
+	color: #dedede;
+	padding: 5px;
+}</string>
+                </property>
+                <property name="text">
+                 <string>Port :</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QSpinBox" name="portClient">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">QSpinBox {
+	padding: 0 15px 0 27px;
+	border: 2px solid #dedede;
+	color: #dedede;
+	background: transparent;
+	border-radius: 15px;
+}
+
+QSpinBox:hover, QSpinBox:focus {
+	border-color: #F38533;
+}</string>
+                </property>
+                <property name="minimum">
+                 <number>1000</number>
+                </property>
+                <property name="maximum">
+                 <number>9999</number>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_10">
+              <property name="topMargin">
+               <number>10</number>
+              </property>
+              <property name="bottomMargin">
+               <number>10</number>
+              </property>
+              <item>
+               <widget class="QLabel" name="label_12">
+                <property name="font">
+                 <font>
+                  <family>Montserrat Medium</family>
+                  <pointsize>12</pointsize>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">QLabel {
+	color: #dedede;
+	padding: 5px;
+}</string>
+                </property>
+                <property name="text">
+                 <string>Nom du fichier :</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="fichierClient">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">QLineEdit {
+	padding: 0 15px 0 27px;
+	border: 2px solid #dedede;
+	color: #dedede;
+	background: transparent;
+	border-radius: 15px;
+}
+</string>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="placeholderText">
+                 <string>Entrer le nom du fichier recherché</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item alignment="Qt::AlignHCenter">
+             <widget class="QPushButton" name="connexionServeur">
+              <property name="enabled">
+               <bool>true</bool>
+              </property>
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="font">
+               <font>
+                <family>Montserrat SemiBold</family>
+                <pointsize>11</pointsize>
+               </font>
+              </property>
+              <property name="cursor">
+               <cursorShape>PointingHandCursor</cursorShape>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">QPushButton {
+	color: #dedede;
+	background: #002A44;
+	border: 2px solid #dedede;
+	border-radius: 15px;
+	padding: 2px 15px;
+}
+
+QPushButton:disabled {
+	background: rgb(0, 82, 129);
+}
+
+QPushButton:hover {
+	background: #003c5f;
+	border-color: #F38533;
+}
+
+QPushButton:pressed {
+	background: #F38533;
+}</string>
+              </property>
+              <property name="text">
+               <string>Se connecter</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer name="verticalSpacer_4">
+              <property name="orientation">
+               <enum>Qt::Vertical</enum>
+              </property>
+              <property name="sizeType">
+               <enum>QSizePolicy::Fixed</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>20</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
+             <widget class="QTextEdit" name="messagesClient">
+              <property name="enabled">
+               <bool>true</bool>
+              </property>
+              <property name="font">
+               <font>
+                <family>Montserrat Medium</family>
+                <pointsize>10</pointsize>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">color: white; background: #002A44</string>
+              </property>
+              <property name="readOnly">
+               <bool>true</bool>
+              </property>
+              <property name="html">
+               <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Montserrat Medium'; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-weight:600;&quot;&gt;- Messages :&lt;/span&gt;&lt;span style=&quot; font-family:'MS Shell Dlg 2'; font-size:7.8pt;&quot;&gt; &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>841</width>
+     <height>25</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
