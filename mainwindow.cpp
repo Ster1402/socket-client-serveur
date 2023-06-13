@@ -13,7 +13,6 @@ MainWindow::MainWindow(QWidget *parent)
     serveur->adresseIP = ui->adresseIPServeur;
     serveur->messagesServeur = ui->messagesServeur;
 
-
     // Enregistrement des slots
     QObject::connect(ui->lancerServeur, &QPushButton::pressed,
                      this, [&](){ this->launchServer(ui->lancerServeur); });

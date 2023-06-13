@@ -4,6 +4,9 @@
 
 int main(int argc, char *argv[])
 {
+    // Génération de nombre aléatoire
+    srand(time(NULL));
+
     QApplication a(argc, argv);
     MainWindow w;
     w.show();

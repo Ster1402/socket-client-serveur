@@ -11,7 +11,7 @@ void Client::run()
     try {
         connexionAuServeur();
     }  catch (...) {
-        qDebug("Erreur d'éxécution de la connexion Client");
+        qDebug() << "Erreur d'éxécution de la connexion Client";
     }
     emit processEnd(true);
 }
@@ -42,8 +42,6 @@ void Client::connexionAuServeur()
         return;
     }
 
-    PCSTR serverIp = qPrintable(adresseIPServeur); // Adresse IP du serveur
-
     std::string fileName = nomFichier.toStdString();
 
     // Initialisation de Winsock
@@ -69,7 +67,7 @@ void Client::connexionAuServeur()
     serverAddr.sin_port = htons(portServeur);
 
     // Convertir l'adresse IP du serveur en format binaire
-    if (inet_pton(AF_INET, serverIp , &(serverAddr.sin_addr)) <= 0)
+    if (inet_pton(AF_INET, adresseIPServeur.toStdString().c_str() , &(serverAddr.sin_addr)) <= 0)
     {
         printMessage("Erreur de conversion de l'adresse IP ou port de communication incorrecte.");
         closesocket(clientSocket);
@@ -125,19 +123,27 @@ void Client::connexionAuServeur()
             return;
         }
 
-
         // Réception du message "FIN" du serveur
-       int recvSize = recvfrom(clientSocket, buffer, BUFFER_SIZE, 0,NULL, NULL);
-        if (recvSize == SOCKET_ERROR)
-        {
-            printMessage("Erreur de réception du message FIN.");
-            closesocket(clientSocket);
-            WSACleanup();
-            return;
-        }
-        else
-        {
-            printMessage("Message FIN reçu du serveur : 😁 " + QString(buffer));
+        QString finMessage = "FIN";
+
+        while(true){
+            int recvSize = recvfrom(clientSocket, buffer, BUFFER_SIZE, 0,NULL, NULL);
+            QString messageServeur = QString(buffer);
+            if (recvSize == SOCKET_ERROR)
+            {
+                printMessage("Erreur de réception du message FIN.");
+                break;
+            }
+            else if (messageServeur.startsWith(finMessage))
+            {
+                printMessage("Message FIN reçu du serveur !");
+                break;
+            }
+            else
+            {
+                // Reception des données du serveur
+                printMessage("Message de données reçu du serveur : " + messageServeur);
+            }
         }
 
     }

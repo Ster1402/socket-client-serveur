@@ -7,6 +7,8 @@
 #include <winsock2.h>
 #include <windows.h>
 #include <WS2tcpip.h>
+#include <QUdpSocket>
+#include <QHostAddress>
 
 #define BUFFER_SIZE 1024
 

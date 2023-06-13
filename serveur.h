@@ -7,6 +7,8 @@
 #include <string>
 #include <winsock2.h>
 #include <windows.h>
+#include <QUdpSocket>
+#include <QHostAddress>
 
 
 #define SERVER_PORT 12345
@@ -27,7 +29,8 @@ public:
     explicit Serveur(QObject *parent = nullptr);
     void printMessage(const QString& message);
     void lancementServeur();
-    void processMessage(SOCKET serverSocket, SOCKADDR_IN clientAddress, char* message);
+//    void processMessage(SOCKET serverSocket, SOCKADDR_IN clientAddress, char* message);
+    void processMessage(const QHostAddress& senderAddress, quint16 senderPort, const QByteArray& message, QUdpSocket &serverSocket);
 
     // Attributs
     int portServeur{};
